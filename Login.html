@@ -43,6 +43,7 @@
       overflow: hidden;
       position: relative;
       margin: 60px auto;
+      padding: 20px;
     }
 
     .form-wrapper {
@@ -53,7 +54,7 @@
 
     form {
       width: 50%;
-      padding: 40px;
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
     }
@@ -62,16 +63,17 @@
       margin-bottom: 20px;
       text-align: center;
       color: white;
+      font-size: 1.5rem;
     }
 
     input {
       margin: 10px 0;
-      padding: 15px;
+      padding: 12px;
       border: none;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.2);
       color: white;
-      font-size: 16px;
+      font-size: 14px;
       outline: none;
       transition: background 0.3s;
     }
@@ -85,14 +87,14 @@
     }
 
     button {
-      padding: 15px;
+      padding: 12px;
       margin-top: 15px;
       border: none;
       border-radius: 8px;
       background: white;
       color: #4a90e2;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       transition: all 0.3s;
     }
@@ -141,48 +143,40 @@
     }
 
     .bubble:nth-child(1) {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       left: 10%;
       animation-duration: 8s;
     }
     .bubble:nth-child(2) {
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
       left: 20%;
       animation-duration: 5s;
     }
     .bubble:nth-child(3) {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       left: 35%;
       animation-duration: 10s;
     }
     .bubble:nth-child(4) {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
       left: 50%;
       animation-duration: 7s;
     }
     .bubble:nth-child(5) {
-      width: 25px;
-      height: 25px;
+      width: 15px;
+      height: 15px;
       left: 65%;
       animation-duration: 6s;
     }
 
     @keyframes rise {
-      0% {
-        bottom: -100px;
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(100px);
-      }
-      100% {
-        bottom: 1080px;
-        transform: translateX(-200px);
-      }
+      0% { bottom: -100px; transform: translateX(0); }
+      50% { transform: translateX(100px); }
+      100% { bottom: 1080px; transform: translateX(-200px); }
     }
 
     /* Responsive Design */
@@ -192,12 +186,23 @@
         margin: 40px auto;
       }
       form {
-        padding: 30px;
+        padding: 20px;
+      }
+      h2 {
+        font-size: 1.25rem;
+      }
+      input,
+      button {
+        font-size: 13px;
+        padding: 10px;
       }
       .search-form input,
       .search-form button {
         width: 100%;
         margin: 5px 0;
+      }
+      .navbar-collapse .nav {
+        margin-bottom: 10px;
       }
     }
 
@@ -213,7 +218,7 @@
     <div class="container text-center">
       <a href="Home.html" class="d-inline-flex align-items-center text-decoration-none text-white">
         <i class="bi bi-star-fill me-2"></i>
-        <img src="Atomic Motion Logo.jpeg" alt="Logo" class="img-fluid" style="height: 100px; width: 100px; margin-right: 25px; border-radius: 50%;">
+        <img src="Atomic Motion Logo.jpeg" alt="Logo" class="img-fluid" style="height: 80px; width: 80px; margin-right: 15px; border-radius: 50%;">
         <h1 class="mb-0 strong text-white">The Milky Wayfarer</h1>
       </a>
     </div>
@@ -226,9 +231,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="Moonshots & Scopes.html">Moon Shots & Scopes</a></li>
+          <li class="nav-item"><a class="nav-link" href="Moonshots & Scopes.html">Moon Shots</a></li>
           <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="Star-map.html">Star Map</a></li>
           <li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
@@ -239,7 +244,7 @@
           <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
         </ul>
         <!-- Search Form -->
-        <form class="d-flex ms-3 search-form" role="search">
+        <form class="d-flex search-form" role="search">
           <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
           <button class="btn btn-outline-light" type="submit">
             <i class="fas fa-search"></i>
@@ -284,23 +289,23 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-black text-white py-5">
+  <footer class="bg-black text-white py-4">
     <div class="container">
-      <div class="row">
+      <div class="row g-3">
         <div class="col-md-8 text-center text-md-start">
-          <h5 class="text-warning mb-3">
+          <h5 class="text-warning mb-2">
             <i class="bi bi-person-circle me-2"></i>Nonhlanhla Tumelo Matekenya
           </h5>
-          <p>Botswana's Eyes on the Cosmos.</p>
+          <p class="small">Botswana's Eyes on the Cosmos.</p>
         </div>
         <div class="col-md-4 text-center text-md-end">
-          <div class="social-links mb-3">
-            <a href="https://twitter.com/SWxAlerts " class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-            <a href="https://www.facebook.com/skyandtelescope " class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="https://www.instagram.com/theplanetstoday/ " class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://www.youtube.com/ @theskylive" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+          <div class="social-links mb-2">
+            <a href="#" class="text-white me-2"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
           </div>
-          <p class="mb-0">© 2025 The Milky Wayfarer. All rights reserved.</p>
+          <p class="small mb-0">© 2025 The Milky Wayfarer. All rights reserved.</p>
         </div>
       </div>
     </div>
