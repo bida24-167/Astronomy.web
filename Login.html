@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Milky Wayfarer</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap @5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css "/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons @1.10.0/font/bootstrap-icons.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <style>
     /* General Styles */
     body {
-      background: url('images/pexels-luisfe-5191926.jpg') no-repeat center center fixed;
+      background: url('https://images.pexels.com/photos/5191926/pexels-photo-5191926.jpeg') no-repeat center center fixed;
+      background-size: cover;
       min-height: 100vh;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
@@ -107,7 +108,7 @@
     .switch-btn {
       background: transparent;
       color: white;
-      border: 1px solid rgba(255, 255, 255, 0.5) !important;
+      border: 1px solid rgba(255, 255, 255, 0.5);
       margin-top: 20px;
     }
 
@@ -218,8 +219,8 @@
     <div class="container text-center">
       <a href="Home.html" class="d-inline-flex align-items-center text-decoration-none text-white">
         <i class="bi bi-star-fill me-2"></i>
-        <img src="Atomic Motion Logo.jpeg" alt="Logo" class="img-fluid" style="height: 80px; width: 80px; margin-right: 15px; border-radius: 50%;">
-        <h1 class="mb-0 strong text-white">The Milky Wayfarer</h1>
+        <img src="https://via.placeholder.com/80" alt="Logo" class="img-fluid" style="height: 80px; width: 80px; margin-right: 15px; border-radius: 50%;">
+        <h1 class="mb-0 text-white">The Milky Wayfarer</h1>
       </a>
     </div>
   </header>
@@ -269,8 +270,8 @@
         <!-- Login Form -->
         <form id="loginForm">
           <h2>Welcome Back</h2>
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
           <button type="submit">Sign In</button>
           <button type="button" class="switch-btn" onclick="switchForm()">Create an account</button>
         </form>
@@ -278,9 +279,9 @@
         <!-- Sign Up Form -->
         <form id="signupForm">
           <h2>Join Us</h2>
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
           <button type="submit">Sign Up</button>
           <button type="button" class="switch-btn" onclick="switchForm()">Already have an account?</button>
         </form>
@@ -312,7 +313,7 @@
   </footer>
 
   <!-- JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap @5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     function switchForm() {
       const slider = document.getElementById('formSlider');
