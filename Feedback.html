@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Milky Wayfarer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <style>
+
+.body {
+      font-family: 'Arial', sans-serif;
+      background: url(pexels-luisfe-5191926.jpg) no-repeat center center fixed;
+      color: #343a40;
+    }
+
+    .feedback-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(128, 128, 128, 0.663);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .feedback-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .feedback-header h1 {
+      color: black;
+      margin-bottom: 0.5rem;
+    }
+
+    .feedback-header p {
+      color: #0c0c0c;
+    }
+
+    .feedback-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .feedback-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #000000;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea,
+    .feedback-form select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #000000;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      background-color: transparent;
+    }
+
+    .feedback-form input:focus,
+    .feedback-form textarea:focus,
+    .feedback-form select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    }
+
+    .feedback-form textarea {
+      min-height: 120px;
+      resize: vertical;
+      background-color: transparent;
+    }
+
+    .rating-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+    }
+
+    .rating-option {
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .rating-option:hover {
+      transform: scale(1.1);
+    }
+
+    .rating-option input {
+      display: none;
+    }
+
+    .rating-option label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      color: #adb5bd;
+      transition: color 0.3s ease;
+    }
+
+    .rating-option i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .rating-option input:checked + label {
+      color: var(--primary);
+    }
+
+    .rating-option input:checked + label i.fa-angry {
+      color: #f72585;
+    }
+
+    .rating-option input:checked + label i.fa-frown {
+      color: #ff9f1c;
+    }
+
+    .rating-option input:checked + label i.fa-meh {
+      color: #ffd60a;
+    }
+
+    .rating-option input:checked + label i.fa-smile {
+      color: #4cc9f0;
+    }
+
+    .rating-option input:checked + label i.fa-grin-stars {
+      color: #38b000;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background-color:transparent;
+      border: solid 2px var(--primary-dark);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .error-message {
+      color: var(--danger);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 1.5rem;
+      background-color: transparent;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .success-message i {
+      font-size: 3rem;
+      color: var(--success);
+      margin-bottom: 1rem;
+    }
+
+    .success-message h2 {
+      color: var(--success);
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .feedback-container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      .rating-option i {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Logo Section -->
+  <header class="logo-section py-3 bg-transparent">
+    <div class="container text-center">
+      <a href="Home.html" class="d-inline-flex align-items-center text-decoration-none text-white">
+        <i class="bi bi-star-fill me-2"></i> <!-- Example icon from Bootstrap Icons -->
+        <img src="Atomic Motion Logo.jpeg" alt="" class="img-fluid" style="height: 100px; width: 100px; margin-right: 25px; border-radius: 50%;">
+        <h1 class="logo-text mb-0 strong text-decoration-italics">The Milky Wayfarer</h1>
+      </a>
+    </div>
+  </header>
+
+  <!-- Navbar - contents aligned right -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Empty div to push content to the right -->
+        <div class="me-auto"></div>
+        
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="Moonshots & Scopes.html">Moon Shots & Scopes</a></li>
+          <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="Star-map.html">Star Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="Blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
+        </ul>
+
+        <form class="d-flex ms-3" style="height: 30px; width: 250px;">
+          <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-outline-light fas fa-search" type="submit" style="width: 30%; margin-top: 0;"></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Feedback Form -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center my-4">Feedback Form</h1>
+        <p class="text-center">We value your feedback! Please fill out the form below.</p>
+      </div>
+    </div>
+
+  <div class="feedback-container">
+    <div class="feedback-header">
+      <h1><i class="fas fa-comment-alt"></i> Share Your Feedback</h1>
+      <p>We'd love to hear your thoughts to improve our service</p>
+    </div>
+
+    <div class="success-message">
+      <i class="fas fa-check-circle"></i>
+      <h2>Thank You!</h2>
+      <p>Your feedback has been submitted successfully.</p>
+      <p>We appreciate your time and input.</p>
+    </div>
+
+    <form class="feedback-form" id="feedbackForm">
+      <div class="form-group">
+        <label for="name">Your Name (Optional)</label>
+        <input type="text" id="name" name="name" placeholder="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email (Optional)</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com">
+        <div class="error-message" id="emailError">Please enter a valid email address</div>
+      </div>
+
+      <div class="form-group">
+        <label>How would you rate your experience?</label>
+        <div class="rating-container">
+          <div class="rating-option">
+            <input type="radio" id="rating-1" name="rating" value="1">
+            <label for="rating-1">
+              <i class="fas fa-angry"></i>
+              <span>Poor</span>
+            </label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-2" name="rating" value="2">
+            <label for="rating-2">
+              <i class="fas fa-frown"></i>
+              <span>Fair</span>
+            </label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-3" name="rating" value="3">
+            <label for="rating-3">
+              <i class="fas fa-meh"></i>
+              <span>Okay</span>
+            </label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-4" name="rating" value="4">
+            <label for="rating-4">
+              <i class="fas fa-smile"></i>
+              <span>Good</span>
+            </label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-5" name="rating" value="5">
+            <label for="rating-5">
+              <i class="fas fa-grin-stars"></i>
+              <span>Excellent</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="feedbackType">Type of Feedback</label>
+        <select id="feedbackType" name="feedbackType">
+          <option value="">Select an option</option>
+          <option value="suggestion">Suggestion</option>
+          <option value="bug">Bug Report</option>
+          <option value="compliment">Compliment</option>
+          <option value="complaint">Complaint</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Feedback*</label>
+        <textarea id="message" name="message" placeholder="Please share your thoughts..." required></textarea>
+        <div class="error-message" id="messageError">Please enter your feedback</div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('feedbackForm');
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('emailError');
+      const messageInput = document.getElementById('message');
+      const messageError = document.getElementById('messageError');
+      const successMessage = document.querySelector('.success-message');
+
+      // Validate email format
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      // Form submission handler
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        // Reset error messages
+        emailError.style.display = 'none';
+        messageError.style.display = 'none';
+
+        // Validate email if provided
+        if (emailInput.value && !validateEmail(emailInput.value)) {
+          emailError.style.display = 'block';
+          isValid = false;
+        }
+
+        // Validate required message
+        if (!messageInput.value.trim()) {
+          messageError.style.display = 'block';
+          isValid = false;
+        }
+
+        if (isValid) {
+          // Here you would typically send the data to a server
+          // For demonstration, we'll just show the success message
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+          
+          // In a real application, you might use:
+          // fetch('/api/feedback', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({
+          //     name: document.getElementById('name').value,
+          //     email: emailInput.value,
+          //     rating: document.querySelector('input[name="rating"]:checked')?.value,
+          //     feedbackType: document.getElementById('feedbackType').value,
+          //     message: messageInput.value
+          //   })
+          // })
+          // .then(response => response.json())
+          // .then(data => {
+          //   form.style.display = 'none';
+          //   successMessage.style.display = 'block';
+          // })
+          // .catch(error => {
+          //   console.error('Error:', error);
+          //   alert('There was an error submitting your feedback. Please try again.');
+          // });
+        }
+      });
+
+      // Real-time email validation
+      emailInput.addEventListener('input', function() {
+        if (emailInput.value && !validateEmail(emailInput.value)) {
+          emailError.style.display = 'block';
+        } else {
+          emailError.style.display = 'none';
+        }
+      });
+    });
+  </script>
+    </body>
+    </html>
