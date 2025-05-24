@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Milky Wayfarer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap @5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css "/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons @1.10.0/font/bootstrap-icons.css"/>
   <style>
     /* General Styles */
     body {
-     background: url(images/pexels-luisfe-5191926.jpg) no-repeat center center fixed;
+      background: url('images/pexels-luisfe-5191926.jpg') no-repeat center center fixed;
       min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
-      font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
+      margin: 0;
     }
 
     /* Logo Section */
@@ -23,12 +26,12 @@
       padding: 1rem 0;
     }
 
-    /* Navbar Styles */
+    /* Navbar */
     .navbar {
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    /* Glassmorphism Form */
+    /* Glassmorphism Container */
     .glass-container {
       width: 400px;
       background: rgba(255, 255, 255, 0.1);
@@ -39,7 +42,7 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       overflow: hidden;
       position: relative;
-      margin: 40px auto; /* Added margin for spacing */
+      margin: 60px auto;
     }
 
     .form-wrapper {
@@ -119,38 +122,12 @@
       transform: translateX(-50%);
     }
 
-        /* Responsive Design for Mobile */
-@media (max-width: 576px) {
-  .glass-container {
-    width: 90%;
-    padding: 20px;
-  }
-  
-  .form-wrapper {
-    width: 100%;
-    height: auto;
-  }
-  
-  .form {
-    gap: 0.5rem;
-  }
-  
-  input {
-    font-size: 14px;
-  }
-  
-  button[type="submit"] {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-    /* Floating bubbles background */
+    /* Floating Bubbles Background */
     .bubbles {
       position: fixed;
       width: 100%;
       height: 100%;
       z-index: -1;
-      overflow: hidden;
       top: 0;
       left: 0;
     }
@@ -169,28 +146,24 @@
       left: 10%;
       animation-duration: 8s;
     }
-
     .bubble:nth-child(2) {
       width: 20px;
       height: 20px;
       left: 20%;
       animation-duration: 5s;
     }
-
     .bubble:nth-child(3) {
       width: 50px;
       height: 50px;
       left: 35%;
       animation-duration: 10s;
     }
-
     .bubble:nth-child(4) {
       width: 30px;
       height: 30px;
       left: 50%;
       animation-duration: 7s;
     }
-
     .bubble:nth-child(5) {
       width: 25px;
       height: 25px;
@@ -212,55 +185,47 @@
       }
     }
 
-    /* Footer Styles */
-    footer {
-      margin-top: auto;
-    }
-
-    /* Responsive adjustments */
+    /* Responsive Design */
     @media (max-width: 768px) {
       .glass-container {
         width: 90%;
-        margin: 20px auto;
+        margin: 40px auto;
       }
-      
       form {
         padding: 30px;
       }
-      
-      .navbar-collapse {
-        margin-top: 1rem;
-      }
-      
-      .search-form {
-        margin-top: 1rem;
+      .search-form input,
+      .search-form button {
         width: 100%;
+        margin: 5px 0;
       }
+    }
+
+    footer {
+      margin-top: auto;
     }
   </style>
 </head>
 <body>
-   <!-- Logo Section -->
+
+  <!-- Logo Section -->
   <header class="logo-section py-3 bg-transparent">
     <div class="container text-center">
       <a href="Home.html" class="d-inline-flex align-items-center text-decoration-none text-white">
-        <i class="bi bi-star-fill me-2"></i> <!-- Example icon from Bootstrap Icons -->
-        <img src="Atomic Motion Logo.jpeg" alt="" class="img-fluid" style="height: 100px; width: 100px; margin-right: 25px; border-radius: 50%;">
-        <h1 class="logo-text mb-0 strong text-decoration-italics">The Milky Wayfarer</h1>
+        <i class="bi bi-star-fill me-2"></i>
+        <img src="Atomic Motion Logo.jpeg" alt="Logo" class="img-fluid" style="height: 100px; width: 100px; margin-right: 25px; border-radius: 50%;">
+        <h1 class="mb-0 strong text-white">The Milky Wayfarer</h1>
       </a>
     </div>
   </header>
 
-  <!-- Navbar - contents aligned right -->
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <!-- Empty div to push content to the right -->
-        <div class="me-auto"></div>
-        
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="Moonshots & Scopes.html">Moon Shots & Scopes</a></li>
@@ -273,17 +238,19 @@
           <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
           <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
         </ul>
-
-        <form class="d-flex ms-3"  style="height: 30px; width: 250px; display: flex; flex-direction: row;">
-          <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search"  style="height: 30px; width: 250px; margin-top: -10%; margin-left: -15%;">
-          <button class="btn btn-outline-light fas fa-search" type="submit" style="height: 30px; width: 30%; margin-top: -10%;"></button>
+        <!-- Search Form -->
+        <form class="d-flex ms-3 search-form" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
         </form>
       </div>
     </div>
   </nav>
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <!-- Floating bubbles background -->
+
+  <!-- Main Content -->
+  <main class="main-content flex-grow-1">
     <div class="bubbles">
       <div class="bubble"></div>
       <div class="bubble"></div>
@@ -292,7 +259,6 @@
       <div class="bubble"></div>
     </div>
 
-    <!-- Glassmorphism form container -->
     <div class="glass-container">
       <div class="form-wrapper slider" id="formSlider">
         <!-- Login Form -->
@@ -315,9 +281,9 @@
         </form>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer class="bg-black text-white py-5">
     <div class="container">
       <div class="row">
@@ -329,10 +295,10 @@
         </div>
         <div class="col-md-4 text-center text-md-end">
           <div class="social-links mb-3">
-            <a href="https://twitter.com/SWxAlerts" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-            <a href="https://www.facebook.com/skyandtelescope" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="https://www.instagram.com/theplanetstoday/" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://www.youtube.com/@theskylive" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+            <a href="https://twitter.com/SWxAlerts " class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="https://www.facebook.com/skyandtelescope " class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://www.instagram.com/theplanetstoday/ " class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.youtube.com/ @theskylive" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
           </div>
           <p class="mb-0">© 2025 The Milky Wayfarer. All rights reserved.</p>
         </div>
@@ -340,9 +306,8 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap @5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     function switchForm() {
       const slider = document.getElementById('formSlider');
@@ -352,31 +317,29 @@
     // Handle form submissions
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // Add your actual login logic here
-      alert('Login successful! (Demo)');
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+
+      setTimeout(() => {
+        alert('Login successful! (Demo)');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Sign In';
+      }, 1500);
     });
 
     document.getElementById('signupForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // Add your actual signup logic here
-      alert('Account created! (Demo)');
-      switchForm(); // Switch back to login after signup
-    });
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
 
-    // Add loading state for forms
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-      form.addEventListener('submit', function() {
-        const submitBtn = this.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
-        
-        // Reset after demo
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = submitBtn.textContent.includes('Sign In') ? 'Sign In' : 'Sign Up';
-        }, 1500);
-      });
+      setTimeout(() => {
+        alert('Account created! (Demo)');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Sign Up';
+        switchForm();
+      }, 1500);
     });
   </script>
 </body>
