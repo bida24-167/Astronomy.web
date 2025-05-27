@@ -4,33 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Milky Wayfarer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* General Styles */
-    body {
-      background: url('https://images.pexels.com/photos/5191926/pexels-photo-5191926.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-    }
-
-    /* Logo Section */
-    .logo-section {
-      padding: 1rem 0;
-    }
-
-    /* Navbar */
-    .navbar {
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
     /* Glassmorphism Container */
-    .glass-container {
+ .glass-container {
       width: 400px;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(15px);
@@ -46,15 +25,31 @@
 
     .form-wrapper {
       display: flex;
-      width: 200%;
+      width: 100%;
       transition: transform 0.5s ease-in-out;
     }
 
-    form {
+    .form-wrapper form {
       width: 50%;
       padding: 30px 20px;
       display: flex;
       flex-direction: column;
+    }
+
+    #loginForm {
+     width: 100%;
+      display: flex; /* Use flexbox for login form */
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center elements horizontally */
+      justify-content: center; /* Center elements vertically */
+    }
+
+    #signupForm {
+      display: none; /* Hide signup form by default */
+       width: 100%;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center elements horizontally */
+      justify-content: center; /* Center elements vertically */
     }
 
     h2 {
@@ -64,7 +59,7 @@
       font-size: 1.5rem;
     }
 
-    input {
+    .form-wrapper input {
       margin: 10px 0;
       padding: 12px;
       border: none;
@@ -72,15 +67,16 @@
       background: rgba(255, 255, 255, 0.2);
       color: white;
       font-size: 14px;
+      width: 100%;
       outline: none;
       transition: background 0.3s;
     }
 
-    input::placeholder {
+    .form-wrapper input::placeholder {
       color: rgba(255, 255, 255, 0.7);
     }
 
-    input:focus {
+    .form-wrapper input:focus {
       background: rgba(255, 255, 255, 0.3);
     }
 
@@ -120,7 +116,7 @@
 
     .slider.active {
       transform: translateX(-50%);
-    }
+    } 
 
     /* Floating Bubbles Background */
     .bubbles {
@@ -215,9 +211,9 @@
   <header class="logo-section py-3 bg-transparent">
     <div class="container text-center">
       <a href="Home.html" class="d-inline-flex align-items-center text-decoration-none text-white">
-        <i class="bi bi-star-fill me-2"></i>
-        <img src="https://via.placeholder.com/80" alt="Logo" class="img-fluid" style="height: 80px; width: 80px; margin-right: 15px; border-radius: 50%;">
-        <h1 class="mb-0 text-white">The Milky Wayfarer</h1>
+        <i class="bi bi-star-fill me-2"></i> <!-- Example icon from Bootstrap Icons -->
+        <img src="Atomic Motion Logo.jpeg" alt="" class="img-fluid" style="height: 100px; width: 100px; margin-right: 25px; border-radius: 50%;">
+        <h1 class="logo-text mb-0 strong text-decoration-italics">The Milky Wayfarer</h1>
       </a>
     </div>
   </header>
@@ -228,10 +224,13 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Empty div to push content to the right -->
+        <div class="me-auto"></div>
+        
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="Moonshots & Scopes.html">Moon Shots</a></li>
+          <li class="nav-item"><a class="nav-link" href="Moonshots & Scopes.html">Moon Shots & Scopes</a></li>
           <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="Star-map.html">Star Map</a></li>
           <li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
@@ -241,19 +240,19 @@
           <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
           <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
         </ul>
-        <!-- Search Form -->
-        <form class="d-flex search-form" role="search">
+
+       <form class="d-flex ms-3" style="height: 30px; width: 250px;">
           <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
+          <button class="btn btn-outline-light fas fa-search" type="submit" style="width: 30%; margin-top: 0;"></button>
         </form>
       </div>
     </div>
   </nav>
 
+    
+
   <!-- Main Content -->
-  <main class="main-content flex-grow-1">
+   <main class="main-content flex-grow-1">
     <div class="bubbles">
       <div class="bubble"></div>
       <div class="bubble"></div>
@@ -263,24 +262,25 @@
     </div>
 
     <div class="glass-container">
-      <div class="form-wrapper slider" id="formSlider">
-        <!-- Login Form -->
+      <div class="form-wrapper" id="formWrapper">
+        <!-- Login Form (visible by default) -->
         <form id="loginForm">
           <h2>Welcome Back</h2>
           <input type="email" placeholder="Email" required>
           <input type="password" placeholder="Password" required>
           <button type="submit">Sign In</button>
-          <button type="button" class="switch-btn" onclick="switchForm()">Create an account</button>
+          <button type="button" class="switch-btn" onclick="showSignupForm()">Create an account</button>
         </form>
 
-        <!-- Sign Up Form -->
+        <!-- Sign Up Form (hidden by default) -->
         <form id="signupForm">
           <h2>Join Us</h2>
           <input type="text" placeholder="Full Name" required>
           <input type="email" placeholder="Email" required>
           <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
           <button type="submit">Sign Up</button>
-          <button type="button" class="switch-btn" onclick="switchForm()">Already have an account?</button>
+          <button type="button" class="switch-btn" onclick="showLoginForm()">Already have an account?</button>
         </form>
       </div>
     </div>
@@ -309,12 +309,17 @@
     </div>
   </footer>
 
-  <!-- JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function switchForm() {
-      const slider = document.getElementById('formSlider');
-      slider.classList.toggle('active');
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+    function showSignupForm() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('signupForm').style.display = 'flex';
+    }
+
+    function showLoginForm() {
+      document.getElementById('signupForm').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'flex';
     }
 
     // Handle form submissions
@@ -322,8 +327,9 @@
       e.preventDefault();
       const submitBtn = this.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Signing in...';
 
+      // Simulate API call
       setTimeout(() => {
         alert('Login successful! (Demo)');
         submitBtn.disabled = false;
@@ -334,14 +340,23 @@
     document.getElementById('signupForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const submitBtn = this.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+      const password = this.querySelector('input[type="password"]:nth-of-type(1)').value;
+      const confirmPassword = this.querySelector('input[type="password"]:nth-of-type(2)').value;
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
 
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Creating account...';
+
+      // Simulate API call
       setTimeout(() => {
-        alert('Account created! (Demo)');
+        alert('Account created successfully! (Demo)');
         submitBtn.disabled = false;
         submitBtn.textContent = 'Sign Up';
-        switchForm();
+        showLoginForm(); // Switch back to login form
       }, 1500);
     });
   </script>
